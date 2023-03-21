@@ -9,7 +9,7 @@ export const Posts = () => {
   const [posts, setPost] = React.useState({
     loading: true,
     error: false,
-    data: [],
+    post: [],
   });
 
   React.useEffect(() => {
@@ -19,7 +19,7 @@ export const Posts = () => {
         setPost({
           ...posts,
           loading: false,
-          data: data,
+          post: data,
         })
       )
       .catch((err) =>
@@ -39,7 +39,7 @@ export const Posts = () => {
 
       {posts.data.length > 0 && (
         <ul className='list-unstyled d-flex justify-content-around flex-wrap'>
-          {posts.data.map((post) => (
+          {posts.post.map((post) => (
             <li key={post.id} className='w-50 border rounded p-3 mb-3'>
               <h3>{post.title}</h3>
               <p>{post.body}</p> <br />
