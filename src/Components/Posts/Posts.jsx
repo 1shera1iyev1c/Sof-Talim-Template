@@ -37,7 +37,7 @@ export const Posts = () => {
       {posts.loading && <Loading />}
       {posts.error && <Error />}
 
-      {posts.data.length > 0 && (
+      {posts.post.length > 0 && (
         <ul className='list-unstyled d-flex justify-content-around flex-wrap'>
           {posts.post.map((post) => (
             <li key={post.id} className='w-50 border rounded p-3 mb-3'>
